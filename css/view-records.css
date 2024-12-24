@@ -1,0 +1,97 @@
+/*not in use*/
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    /* Prevent scrolling of the content section */
+}
+
+.dashboard-box {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#past-records h1 {
+    text-align: center;
+}
+
+#past-records {
+    max-height: 80vh;
+    /* Adjust this to control how much space the table occupies vertically */
+    overflow: hidden;
+}
+
+#past-records .table-container {
+    max-height: 60vh;
+    /* Adjust to control the height of the table data area */
+    overflow-y: auto;
+    /* Enable vertical scrolling within the table data */
+}
+
+#past-records table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Remove table-layout: fixed; to allow column widths to adjust based on content */
+}
+
+#past-records table th,
+#past-records table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    /* Ensure long text doesn't overflow */
+}
+
+#past-records table th {
+    position: sticky;
+    top: 0;
+    background-color: #343a40;
+    /* Dark gray for table headers */
+    color: #fff;
+    /* White text for contrast */
+    z-index: 1;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+#past-records table td {
+    background-color: #f8f9fa;
+    /* Light gray for table data */
+}

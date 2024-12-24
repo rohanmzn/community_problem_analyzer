@@ -1,0 +1,37 @@
+/* Snackbar style */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on action */
+    min-width: 250px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    border-radius: 5%;
+    z-index: 1;
+    left: 50%;
+    bottom: 19%; /* Positioning the snackbar vertically in the center */
+    transform: translateX(-50%) translateY(50%); /* Center it horizontally and vertically */
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadeInOut 3s ease-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

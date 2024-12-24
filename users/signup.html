@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="../css/signup_as.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Signup</h2>
+        <form id="signupForm" action="signup.php" method="POST" onsubmit="return validateForm()">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="contact_no" placeholder="Contact No." required>
+            <button type="submit">Signup</button>
+        </form>
+        <p><a href="login.php">Already have an account? Login</a></p>
+    </div>
+    <script>
+        function validateForm() {
+            const form = document.getElementById('signupForm');
+            const password = form.password.value;
+            const confirmPassword = form.confirm_password.value;
+
+            // Password validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            if (!/[A-Z]/.test(password)) {
+                alert("Password must contain at least one uppercase letter.");
+                return false;
+            }
+
+            if (!/[0-9]/.test(password)) {
+                alert("Password must contain at least one number.");
+                return false;
+            }
+
+            if (!/[!@#$%^&*]/.test(password)) {
+                alert("Password must contain at least one special character (!@#$%^&*).");
+                return false;
+            }
+
+            // Allow form submission if validation passes
+            return true;
+        }
+    </script>
+</body>
+
+</html>
